@@ -11,7 +11,7 @@ import SwiftUI
 struct core_bluetoothApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainBoard()
         }
     }
 }

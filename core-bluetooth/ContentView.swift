@@ -8,6 +8,7 @@ class CentralManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate, 
     var centralManager: CBCentralManager!
     var peripheral: CBPeripheral!
     var characteristic: CBCharacteristic?
+    @Published var peripheralNames: [String] = []
     
     // Combine Publisher for User Details
     let userDetailsPublisher = PassthroughSubject<String?, Never>()
@@ -117,7 +118,7 @@ struct ContentView: View {
     var body: some View {
         Text("Central Hello, World!")
             .onAppear {
-                centralManager.start()
+               // centralManager.start()
             }
     }
 }
