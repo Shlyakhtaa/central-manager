@@ -11,14 +11,15 @@
 		0140DDD72880B79E00437DD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140DDD62880B79E00437DD1 /* ContentView.swift */; };
 		0140DDD92880B79F00437DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0140DDD82880B79F00437DD1 /* Assets.xcassets */; };
 		0140DDDC2880B7A000437DD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0140DDDB2880B7A000437DD1 /* Preview Assets.xcassets */; };
+		AB0AE34A2A345024001529B5 /* CentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0AE3492A345024001529B5 /* CentralManager.swift */; };
 		AB405E872A2EF4A50038BBD2 /* MainBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB405E862A2EF4A50038BBD2 /* MainBoard.swift */; };
 		AB405E8E2A2F07220038BBD2 /* ScanDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB405E8D2A2F07220038BBD2 /* ScanDate.swift */; };
 		AB64DC9B2A30B17D00E2D4EB /* ScanDateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64DC9A2A30B17D00E2D4EB /* ScanDateList.swift */; };
 		AB64DC9D2A30B3FC00E2D4EB /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64DC9C2A30B3FC00E2D4EB /* test.swift */; };
 		AB64DC9F2A30B88B00E2D4EB /* SendDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64DC9E2A30B88B00E2D4EB /* SendDate.swift */; };
 		AB64DCA32A30BF7A00E2D4EB /* ScanBLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64DCA22A30BF7A00E2D4EB /* ScanBLE.swift */; };
-		AB64DCA52A30D17D00E2D4EB /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB64DCA42A30D17D00E2D4EB /* JSON.swift */; };
 		AB64DCA72A30D1FE00E2D4EB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = AB64DCA62A30D1FE00E2D4EB /* data.json */; };
+		AB878D0E2A3CD1D3006A8E47 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB878D0D2A3CD1D3006A8E47 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,14 +28,15 @@
 		0140DDD62880B79E00437DD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0140DDD82880B79F00437DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0140DDDB2880B7A000437DD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AB0AE3492A345024001529B5 /* CentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CentralManager.swift; path = ../../../CentralManager.swift; sourceTree = "<group>"; };
 		AB405E862A2EF4A50038BBD2 /* MainBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainBoard.swift; path = ../../../MainBoard.swift; sourceTree = "<group>"; };
 		AB405E8D2A2F07220038BBD2 /* ScanDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScanDate.swift; path = ../../../ScanDate.swift; sourceTree = "<group>"; };
 		AB64DC9A2A30B17D00E2D4EB /* ScanDateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanDateList.swift; sourceTree = "<group>"; };
 		AB64DC9C2A30B3FC00E2D4EB /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = test.swift; path = ../../test.swift; sourceTree = "<group>"; };
 		AB64DC9E2A30B88B00E2D4EB /* SendDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SendDate.swift; path = ../../../SendDate.swift; sourceTree = "<group>"; };
 		AB64DCA22A30BF7A00E2D4EB /* ScanBLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBLE.swift; sourceTree = "<group>"; };
-		AB64DCA42A30D17D00E2D4EB /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = ../../JSON.swift; sourceTree = "<group>"; };
 		AB64DCA62A30D1FE00E2D4EB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../../data.json; sourceTree = "<group>"; };
+		AB878D0D2A3CD1D3006A8E47 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,6 @@
 		0140DDC82880B79E00437DD1 = {
 			isa = PBXGroup;
 			children = (
-				AB64DCA42A30D17D00E2D4EB /* JSON.swift */,
 				AB64DC9C2A30B3FC00E2D4EB /* test.swift */,
 				0140DDD32880B79E00437DD1 /* core-bluetooth */,
 				0140DDD22880B79E00437DD1 /* Products */,
@@ -76,9 +77,11 @@
 				0140DDDA2880B7A000437DD1 /* Preview Content */,
 				AB405E862A2EF4A50038BBD2 /* MainBoard.swift */,
 				AB405E8D2A2F07220038BBD2 /* ScanDate.swift */,
+				AB878D0D2A3CD1D3006A8E47 /* JSON.swift */,
 				AB64DC9A2A30B17D00E2D4EB /* ScanDateList.swift */,
 				AB64DC9E2A30B88B00E2D4EB /* SendDate.swift */,
 				AB64DCA62A30D1FE00E2D4EB /* data.json */,
+				AB0AE3492A345024001529B5 /* CentralManager.swift */,
 			);
 			path = "core-bluetooth";
 			sourceTree = "<group>";
@@ -163,14 +166,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB405E8E2A2F07220038BBD2 /* ScanDate.swift in Sources */,
+				AB878D0E2A3CD1D3006A8E47 /* JSON.swift in Sources */,
 				AB64DC9D2A30B3FC00E2D4EB /* test.swift in Sources */,
 				AB64DC9F2A30B88B00E2D4EB /* SendDate.swift in Sources */,
-				AB64DCA52A30D17D00E2D4EB /* JSON.swift in Sources */,
 				0140DDD72880B79E00437DD1 /* ContentView.swift in Sources */,
 				AB405E872A2EF4A50038BBD2 /* MainBoard.swift in Sources */,
 				AB64DCA32A30BF7A00E2D4EB /* ScanBLE.swift in Sources */,
 				AB64DC9B2A30B17D00E2D4EB /* ScanDateList.swift in Sources */,
 				0140DDD52880B79E00437DD1 /* core_bluetoothApp.swift in Sources */,
+				AB0AE34A2A345024001529B5 /* CentralManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
