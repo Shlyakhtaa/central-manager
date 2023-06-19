@@ -14,7 +14,7 @@ public struct Group: Decodable {
 public struct Student: Decodable {
     let name: String
     let id: Int
-    let uuid: String
+    let uuid: UInt16
 }
 
 

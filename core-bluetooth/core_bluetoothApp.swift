@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+let scanDateArray = ScanDateArray()
+let textFieldgroupNumber = TextFieldGroupData()
+
 @main
 struct core_bluetoothApp: App {
     var body: some Scene {
         WindowGroup {
             MainBoard()
+                .environmentObject(textFieldgroupNumber)
+                .environmentObject(scanDateArray)
         }
     }
 }
