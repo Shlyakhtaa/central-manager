@@ -9,13 +9,13 @@ struct StudentForTeacher {
 }
 
 
-var key = textFieldgroupNumber.textGroupNumber
+private var key = textFieldgroupNumber.textGroupNumber
 
 
 
 private var groupData: GroupData?
 func hasDataForKey(_ textFieldGroupData: TextFieldGroupData) -> Bool {
-    let key = textFieldGroupData.textGroupNumber // Используйте textFieldGroupData как ключ
+   // let key = textFieldGroupData.textGroupNumber // Используйте textFieldGroupData как ключ
     
     if UserDefaults.standard.object(forKey: key) != nil {
         return true
@@ -56,6 +56,7 @@ func hasDataForKey(_ textFieldGroupData: TextFieldGroupData) -> Bool {
 // структура для сохранения данных о студентах в память приложения
 struct StudentData {
     var records: [[UUID: StudentForTeacher]] {
+        
         set {
             let serializedData = newValue.map { dictionary in
                 dictionary.mapValues { record in
@@ -116,19 +117,21 @@ struct ScanDateList: View {
     @State private var foundStudents: [Student] = []
     
     @State private var studentForTeacher: [StudentForTeacher] = []
-    
     @EnvironmentObject var textGroupData: TextFieldGroupData
     @EnvironmentObject var scanDateArray: ScanDateArray
     var studentData = StudentData() // Используйте @StateObject для создания экземпляра
-
+    
+    
     
     var body: some View {
             VStack {
+                
                 List(Array(renderStudentRecords().map { ($0, $1) }), id: \.0) { name, isMatch in
                            Text(name)
                                .foregroundColor(isMatch ? .black : .red)
                        }
             }
+        
         }
     
     func renderStudentRecords() -> [String: Bool] {
