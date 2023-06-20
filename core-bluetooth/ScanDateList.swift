@@ -13,7 +13,7 @@ var key = textFieldgroupNumber.textGroupNumber
 
 
 
-var groupData: GroupData?
+private var groupData: GroupData?
 func hasDataForKey(_ textFieldGroupData: TextFieldGroupData) -> Bool {
     let key = textFieldGroupData.textGroupNumber // Используйте textFieldGroupData как ключ
     
@@ -62,7 +62,7 @@ struct StudentData {
                     [
                         "uuid": record.uuid,
                         "name": record.name,
-                        "idDevice": record.idDevice.uuidString,
+                        "idDevice": record.idDevice,
                     ]
                 }
             }
@@ -119,39 +119,37 @@ struct ScanDateList: View {
     
     @EnvironmentObject var textGroupData: TextFieldGroupData
     @EnvironmentObject var scanDateArray: ScanDateArray
+    var studentData = StudentData() // Используйте @StateObject для создания экземпляра
+
     
     var body: some View {
-        VStack {
-            // Создаем экземпляр StudentData
-            let studentData = StudentData()
-            
-            // Извлекаем записи (данные)
-            let records = studentData.records
-            
-            // Проходимся по каждой записи
-            ForEach(records, id: \.self) { record in
-                // Проходимся по каждой паре ключ-значение в записи
-                ForEach(record.keys.sorted(), id: \.self) { uuid in
-                    // Извлекаем нужные данные студента
-                    if let student = record[uuid] {
-                        let uuid = student.uuid
-                        let name = student.name
-                        let idDevice = student.idDevice
-                        
-                        // Используем извлеченные данные по вашему усмотрению
-                        if let idDeviceString = scanDateArray.deviceData[idDevice] {
-                            if idDeviceString == uuid {
-                                Text(name)
-                            } else {
-                                Text(name)
-                                    .foregroundColor(.red)
-                            }
-                        }
-                    }
-                }
+            VStack {
+                List(Array(renderStudentRecords().map { ($0, $1) }), id: \.0) { name, isMatch in
+                           Text(name)
+                               .foregroundColor(isMatch ? .black : .red)
+                       }
             }
         }
+    
+    func renderStudentRecords() -> [String: Bool] {
+        var studentRecords: [String: Bool] = [:]
+        
+        for record in studentData.records {
+            for (uuid, student) in record {
+                let studentUUID = student.uuid
+                let studentName = student.name
+                let studentIDDevice = student.idDevice
+                
+                /*if let idDeviceString = scanDateArray.deviceData[studentIDDevice] {
+                    let isMatch = idDeviceString == studentUUID
+                    studentRecords[studentName] = isMatch
+                }*/
+            }
+        }
+        
+        return studentRecords
     }
+
 }
 
 struct ScanDateList_Previews: PreviewProvider {
