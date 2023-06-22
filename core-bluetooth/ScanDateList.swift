@@ -15,7 +15,7 @@ private var key = textFieldgroupNumber.textGroupNumber
 
 private var groupData: GroupData?
 func hasDataForKey(_ textFieldGroupData: TextFieldGroupData) -> Bool {
-   // let key = textFieldGroupData.textGroupNumber // Используйте textFieldGroupData как ключ
+    // let key = textFieldGroupData.textGroupNumber // Используйте textFieldGroupData как ключ
     
     if UserDefaults.standard.object(forKey: key) != nil {
         return true
@@ -28,7 +28,7 @@ func hasDataForKey(_ textFieldGroupData: TextFieldGroupData) -> Bool {
             print("Error reading JSON: \(error)")
         }
         
-    
+        
         
         // Функция добавления данных о студентах в память устройства
         if let groups = groupData?.groups { // Извлекаем значение groups из groupData
@@ -40,14 +40,14 @@ func hasDataForKey(_ textFieldGroupData: TextFieldGroupData) -> Bool {
                 }
                 result = studentsForTeacher // Замените "someKey" на нужный вам ключ
             }
-
+            
             // Создаем экземпляр StudentData
             var studentData = StudentData()
-
+            
             // Добавляем новые данные в records
             studentData.records.append(newRecords)
         }
-                
+        
         return false
     }
 }
@@ -124,15 +124,15 @@ struct ScanDateList: View {
     
     
     var body: some View {
-            VStack {
-                
-                List(Array(renderStudentRecords().map { ($0, $1) }), id: \.0) { name, isMatch in
-                           Text(name)
-                               .foregroundColor(isMatch ? .black : .red)
-                       }
+        VStack {
+            
+            List(Array(renderStudentRecords().map { ($0, $1) }), id: \.0) { name, isMatch in
+                Text(name)
+                    .foregroundColor(isMatch ? .black : .red)
             }
-        
         }
+        
+    }
     
     func renderStudentRecords() -> [String: Bool] {
         var studentRecords: [String: Bool] = [:]
@@ -143,29 +143,20 @@ struct ScanDateList: View {
                 let studentName = student.name
                 let studentIDDevice = student.idDevice
                 
-                /*if let idDeviceString = scanDateArray.deviceData[studentIDDevice] {
+                if let idDeviceString = scanDateArray.deviceData[studentIDDevice] {
                     let isMatch = idDeviceString == studentUUID
                     studentRecords[studentName] = isMatch
-                }*/
+                }
             }
         }
         
         return studentRecords
     }
-
+    
 }
 
 struct ScanDateList_Previews: PreviewProvider {
     static var previews: some View {
-         ScanDateList()
+        ScanDateList()
     }
 }
-
-// Ваш код для структур GroupData, Group, Student и функции readJSONData()
-// ...
-
-
-
-
-// Ваш код для структуры CentralManager и инициализации данных deviceData
-// ...
